@@ -338,9 +338,9 @@ export const googleAuth = asyncHandler(async (req: AuthRequest, res: Response) =
     throw new Error('Google credential is required');
   }
 
-  const ticket = await googleClient.verifyIdToken({
+  const ticket: any = await googleClient.verifyIdToken({
     idToken: credential,
-    audience: process.env.GOOGLE_CLIENT_ID,
+    audience: process.env.GOOGLE_CLIENT_ID as string,
   });
 
   const payload = ticket.getPayload();

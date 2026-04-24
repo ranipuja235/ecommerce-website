@@ -20,8 +20,8 @@ export interface IUser extends Document {
   avatar?: string;
   wishlist: mongoose.Types.ObjectId[];
   addresses: IAddress[];
-  resetPasswordToken?: string;
-  resetPasswordExpires?: Date;
+  resetPasswordToken?: string | undefined;
+  resetPasswordExpires?: Date | undefined;
   createdAt: Date;
   updatedAt: Date;
   comparePassword(candidatePassword: string): Promise<boolean>;

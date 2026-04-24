@@ -6,6 +6,8 @@
  "scripts": {
   "dev": "nodemon src/index.ts",
   "build": "tsc",
+  "build:dev": "tsc --outDir dist/dev",
+  "build:prod": "tsc --outDir dist/prod",
   "start": "node dist/index.js",
   "seed": "ts-node src/seed.ts"
 },
